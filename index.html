@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>广州市番安驾驶学校</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Sans SC',sans-serif;background:#0C0C0C;color:#F0EDE6;font-size:15px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:0.5px solid rgba(255,255,255,0.08);position:sticky;top:0;background:#0C0C0C;z-index:50}
+.logo{font-family:'Noto Serif SC',serif;font-size:16px;letter-spacing:4px;color:#C9A84C}
+.logo em{color:#F0EDE6;font-style:normal}
+.menu-btn{background:none;border:0.5px solid rgba(255,255,255,0.15);border-radius:2px;color:rgba(240,237,230,0.6);font-size:11px;letter-spacing:2px;padding:7px 14px;cursor:pointer;font-family:'Noto Sans SC',sans-serif}
+.mobile-menu{display:none;flex-direction:column;background:#111;border-bottom:0.5px solid rgba(201,168,76,0.15)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:16px 24px;font-size:13px;letter-spacing:2px;color:rgba(240,237,230,0.6);text-decoration:none;border-bottom:0.5px solid rgba(255,255,255,0.05)}
+.mobile-menu a:active{background:rgba(201,168,76,0.08)}
+.hero{padding:48px 24px 0}
+.tag{display:inline-block;font-size:10px;letter-spacing:2px;color:#C9A84C;border:0.5px solid rgba(201,168,76,0.35);padding:5px 12px;border-radius:2px;margin-bottom:24px}
+.hero h1{font-family:'Noto Serif SC',serif;font-size:42px;font-weight:900;line-height:1.08;margin-bottom:20px}
+.hero h1 span{color:#C9A84C}
+.hero p{font-size:14px;line-height:1.85;color:rgba(240,237,230,0.5);margin-bottom:32px}
+.hero-btns{display:flex;gap:12px;margin-bottom:0}
+.btn-r{background:#C8232C;color:#fff;border:none;padding:14px 0;flex:1;font-size:13px;letter-spacing:2px;font-family:'Noto Sans SC',sans-serif;cursor:pointer;border-radius:2px;transition:background 0.2s}
+.btn-r:active{background:#a81c24}
+.btn-o{background:transparent;color:#C9A84C;border:0.5px solid rgba(201,168,76,0.4);padding:14px 0;flex:1;font-size:13px;letter-spacing:2px;font-family:'Noto Sans SC',sans-serif;cursor:pointer;border-radius:2px}
+.btn-o:active{background:rgba(201,168,76,0.08)}
+.stats{display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid rgba(255,255,255,0.08);margin-top:48px}
+.stat{padding:28px 16px;border-right:0.5px solid rgba(255,255,255,0.08);border-bottom:0.5px solid rgba(255,255,255,0.08);text-align:center}
+.stat:nth-child(2n){border-right:none}
+.stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
+.stat-n{font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:#C9A84C;line-height:1}
+.stat-n sup{font-size:16px}
+.stat-l{font-size:10px;letter-spacing:2px;color:rgba(240,237,230,0.35);margin-top:8px}
+.section{padding:56px 24px}
+.section+.section{padding-top:0}
+.eyebrow{font-size:10px;letter-spacing:3px;color:#C8232C;margin-bottom:12px}
+.section h2{font-family:'Noto Serif SC',serif;font-size:30px;font-weight:900;line-height:1.15;margin-bottom:20px}
+.section p{font-size:14px;line-height:1.85;color:rgba(240,237,230,0.5);margin-bottom:14px}
+.divider-line{height:0.5px;background:rgba(255,255,255,0.06);margin:0 24px}
+.about-card{border:0.5px solid rgba(201,168,76,0.2);border-radius:4px;padding:24px;margin-top:28px}
+.row{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:0.5px solid rgba(255,255,255,0.06)}
+.row:last-child{border-bottom:none}
+.row-label{font-size:10px;letter-spacing:2px;color:rgba(240,237,230,0.35);flex:0 0 64px;padding-top:2px}
+.row-val{font-size:13px;line-height:1.7;color:rgba(240,237,230,0.7)}
+.tabs-section{border-top:0.5px solid rgba(255,255,255,0.06)}
+.tabs-header{display:flex;overflow-x:auto;scrollbar-width:none;border-bottom:0.5px solid rgba(255,255,255,0.08);padding:0 24px}
+.tabs-header::-webkit-scrollbar{display:none}
+.tab-btn{background:none;border:none;color:rgba(240,237,230,0.35);font-family:'Noto Sans SC',sans-serif;font-size:12px;letter-spacing:2px;padding:16px 20px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s}
+.tab-btn.active{color:#C9A84C;border-bottom-color:#C9A84C}
+.tab-panel{display:none;padding:32px 24px 56px}
+.tab-panel.active{display:block}
+.locations-grid{display:flex;flex-direction:column;gap:16px}
+.loc-card{border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:24px}
+.loc-name{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:700;margin-bottom:6px}
+.loc-tag{display:inline-block;font-size:10px;letter-spacing:2px;color:#C9A84C;background:rgba(201,168,76,0.1);border:0.5px solid rgba(201,168,76,0.25);border-radius:2px;padding:3px 10px;margin-bottom:16px}
+.loc-area{font-family:'Noto Serif SC',serif;font-size:32px;font-weight:900;color:#C9A84C;line-height:1}
+.loc-area span{font-size:12px;color:rgba(240,237,230,0.3);font-family:'Noto Sans SC',sans-serif}
+.loc-desc{font-size:12px;line-height:1.8;color:rgba(240,237,230,0.35);margin-top:10px}
+.advantages-grid{display:flex;flex-direction:column;gap:0}
+.adv-card{padding:24px 0;border-bottom:0.5px solid rgba(255,255,255,0.06)}
+.adv-card:last-child{border-bottom:none}
+.adv-num{font-size:10px;letter-spacing:3px;color:rgba(201,168,76,0.3);margin-bottom:8px}
+.adv-title{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.adv-desc{font-size:13px;line-height:1.8;color:rgba(240,237,230,0.4)}
+.coop-inner{text-align:center}
+.coop-logos{display:flex;flex-direction:column;align-items:center;gap:12px;margin:28px 0}
+.coop-pill{border:0.5px solid rgba(201,168,76,0.3);border-radius:2px;padding:12px 24px;font-size:13px;letter-spacing:2px;color:rgba(240,237,230,0.7);width:100%}
+.coop-x{font-size:18px;color:rgba(201,168,76,0.3)}
+.coop-desc{font-size:13px;line-height:1.85;color:rgba(240,237,230,0.45)}
+footer{padding:32px 24px;border-top:0.5px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:11px;letter-spacing:1px;color:rgba(240,237,230,0.2)}
+.est{font-family:'Noto Serif SC',serif;font-size:12px;letter-spacing:3px;color:rgba(201,168,76,0.4)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:200;align-items:flex-end;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#141414;border:0.5px solid rgba(201,168,76,0.2);border-radius:4px 4px 0 0;padding:36px 24px 40px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
+.modal h3{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:700;margin-bottom:6px}
+.modal-sub{font-size:12px;color:rgba(240,237,230,0.4);margin-bottom:28px}
+.form-row{margin-bottom:18px}
+.form-row label{display:block;font-size:10px;letter-spacing:2px;color:rgba(240,237,230,0.35);margin-bottom:8px}
+.form-row input,.form-row select{width:100%;background:#0C0C0C;border:0.5px solid rgba(255,255,255,0.12);border-radius:2px;padding:13px 16px;color:#F0EDE6;font-family:'Noto Sans SC',sans-serif;font-size:16px;outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none}
+.form-row input:focus,.form-row select:focus{border-color:rgba(201,168,76,0.5)}
+.form-row select option{background:#141414}
+.modal-btns{display:flex;gap:12px;margin-top:28px}
+.modal-submit{flex:1;background:#C8232C;color:#fff;border:none;padding:15px;font-size:13px;letter-spacing:2px;font-family:'Noto Sans SC',sans-serif;cursor:pointer;border-radius:2px}
+.modal-submit:active{background:#a81c24}
+.modal-cancel{background:transparent;color:rgba(240,237,230,0.4);border:0.5px solid rgba(255,255,255,0.1);padding:15px 20px;font-size:13px;font-family:'Noto Sans SC',sans-serif;cursor:pointer;border-radius:2px}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:rgba(240,237,230,0.3);font-size:22px;cursor:pointer;line-height:1}
+.success-msg{display:none;text-align:center;padding:16px 0}
+.success-check{font-size:44px;margin-bottom:16px;color:#C9A84C}
+.success-msg p{font-size:14px;color:rgba(240,237,230,0.7);line-height:1.8}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">番安<em>驾驶</em></div>
+  <button class="menu-btn" onclick="toggleMenu()">菜单</button>
+</nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="#" onclick="showTab('locations');closeMenu();return false">训练场地</a>
+  <a href="#" onclick="showTab('advantages');closeMenu();return false">核心优势</a>
+  <a href="#" onclick="showTab('coop');closeMenu();return false">校企合作</a>
+  <a href="#" onclick="openModal();closeMenu();return false">立即报名</a>
+</div>
+
+<div class="hero">
+  <div class="tag">国有 · 证照齐全 · 1994年</div>
+  <h1>广州市番安<br><span>驾驶学校</span></h1>
+  <p>深耕番禺驾考市场三十余年，番禺区规模较大的国有汽车驾驶培训学校，与广州职业技术大学建立校企合作关系。</p>
+  <div class="hero-btns">
+    <button class="btn-r" onclick="openModal()">立即报名</button>
+    <button class="btn-o" onclick="document.querySelector('.tabs-section').scrollIntoView({behavior:'smooth'})">了解更多</button>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-n" id="s1">0</div><div class="stat-l">深耕年限</div></div>
+    <div class="stat"><div class="stat-n" id="s2">0</div><div class="stat-l">持证教练员</div></div>
+    <div class="stat"><div class="stat-n" id="s3">0</div><div class="stat-l">教练车辆</div></div>
+    <div class="stat"><div class="stat-n" id="s4">0</div><div class="stat-l">训练场地㎡</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="eyebrow">关于我们</div>
+  <h2>番禺区标杆<br>驾驶培训机构</h2>
+  <p>广州市番安驾驶学校有限公司始建于1994年，是经番禺区政府和车辆主管部门批准成立的国有汽车驾驶培训学校。</p>
+  <p>在番禺沙湾、化龙、石楼设有训练场，是番禺区内规模较大、设施较齐全的驾驶培训学校之一。</p>
+  <div class="about-card">
+    <div class="row"><div class="row-label">资质</div><div class="row-val">国有企业 · 番禺区政府批准成立</div></div>
+    <div class="row"><div class="row-label">教练员</div><div class="row-val">109名在职教练（含自营14名）</div></div>
+    <div class="row"><div class="row-label">教练车</div><div class="row-val">109台，含小汽车与摩托车</div></div>
+    <div class="row"><div class="row-label">场地</div><div class="row-val">化龙33000㎡ · 沙湾20960㎡ · 石楼</div></div>
+    <div class="row"><div class="row-label">合作院校</div><div class="row-val">广州职业技术大学</div></div>
+  </div>
+</div>
+
+<div class="divider-line"></div>
+
+<div class="tabs-section">
+  <div class="tabs-header">
+    <button class="tab-btn active" onclick="showTab('locations')">训练场地</button>
+    <button class="tab-btn" onclick="showTab('advantages')">核心优势</button>
+    <button class="tab-btn" onclick="showTab('coop')">校企合作</button>
+  </div>
+  <div class="tab-panel active" id="tab-locations">
+    <div class="locations-grid">
+      <div class="loc-card">
+        <div class="loc-name">化龙主体训练场</div>
+        <div class="loc-tag">主营场地</div>
+        <div class="loc-area">33000<span> ㎡</span></div>
+        <div class="loc-desc">核心训练区，设施完善，科目全覆盖。</div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-name">沙湾番安教考场</div>
+        <div class="loc-tag">教考场地</div>
+        <div class="loc-area">20960<span> ㎡</span></div>
+        <div class="loc-desc">模拟考场环境，提前适应实考氛围。</div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-name">石楼训练场</div>
+        <div class="loc-tag">辅助场地</div>
+        <div class="loc-area" style="font-size:20px;padding-top:4px">石楼区域</div>
+        <div class="loc-desc">多场地灵活排班，缩短等候时间。</div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab-advantages">
+    <div class="advantages-grid">
+      <div class="adv-card"><div class="adv-num">01</div><div class="adv-title">国有背景</div><div class="adv-desc">政府批准成立，30年口碑积累，选择番安就是选择有保障的驾培服务。</div></div>
+      <div class="adv-card"><div class="adv-num">02</div><div class="adv-title">三大场地</div><div class="adv-desc">总面积53960㎡，满足科目二、三全程训练需求。</div></div>
+      <div class="adv-card"><div class="adv-num">03</div><div class="adv-title">百名教练</div><div class="adv-desc">109名持证教练，小汽车与摩托车双线教学，因材施教。</div></div>
+      <div class="adv-card"><div class="adv-num">04</div><div class="adv-title">校企合作</div><div class="adv-desc">与广州职业技术大学深度合作，持续提升教学品质。</div></div>
+      <div class="adv-card"><div class="adv-num">05</div><div class="adv-title">车型多元</div><div class="adv-desc">同时提供小汽车与摩托车培训，一家满足多证需求。</div></div>
+      <div class="adv-card"><div class="adv-num">06</div><div class="adv-title">深耕本地</div><div class="adv-desc">熟悉番禺考场环境，给学员最接地气的实战指导。</div></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab-coop">
+    <div class="coop-inner">
+      <div class="coop-logos">
+        <div class="coop-pill">广州市番安驾驶学校</div>
+        <div class="coop-x">×</div>
+        <div class="coop-pill">广州职业技术大学</div>
+      </div>
+      <p class="coop-desc">将职业院校专业教育体系与驾培实践深度融合，共同打造高标准的驾驶人才培养模式，实现产教协同育人。</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 广州市番安驾驶学校</p>
+  <div class="est">Est. 1994</div>
+</footer>
+
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-form">
+      <h3>预约报名</h3>
+      <div class="modal-sub">填写信息，我们将尽快与您联系</div>
+      <div class="form-row"><label>姓名</label><input type="text" placeholder="请输入您的姓名" id="f-name"></div>
+      <div class="form-row"><label>联系电话</label><input type="tel" placeholder="请输入手机号码" id="f-tel"></div>
+      <div class="form-row"><label>报名科目</label>
+        <select id="f-type">
+          <option value="">请选择</option>
+          <option>小汽车（C1）</option>
+          <option>小汽车（C2）</option>
+          <option>摩托车（A1/A2）</option>
+          <option>其他</option>
+        </select>
+      </div>
+      <div class="modal-btns">
+        <button class="modal-cancel" onclick="closeModal()">取消</button>
+        <button class="modal-submit" onclick="submitForm()">提交报名</button>
+      </div>
+    </div>
+    <div class="success-msg" id="modal-success">
+      <div class="success-check">✓</div>
+      <p>报名信息已提交！<br>我们将在1个工作日内与您联系。</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mmenu').classList.remove('open')}
+function showTab(id){
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
+    b.classList.toggle('active',['locations','advantages','coop'][i]===id);
+  });
+  document.querySelectorAll('.tab-panel').forEach(p=>{
+    p.classList.toggle('active',p.id==='tab-'+id);
+  });
+}
+function openModal(){
+  document.getElementById('modal-form').style.display='block';
+  document.getElementById('modal-success').style.display='none';
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function submitForm(){
+  const name=document.getElementById('f-name').value.trim();
+  const tel=document.getElementById('f-tel').value.trim();
+  document.getElementById('f-name').style.borderColor=name?'':'rgba(200,35,44,0.6)';
+  document.getElementById('f-tel').style.borderColor=tel?'':'rgba(200,35,44,0.6)';
+  if(!name||!tel)return;
+  document.getElementById('modal-form').style.display='none';
+  document.getElementById('modal-success').style.display='block';
+  setTimeout(closeModal,2200);
+}
+function countUp(el,target,suffix,dur){
+  const s=Date.now();
+  const go=()=>{
+    const p=Math.min((Date.now()-s)/dur,1);
+    const e=1-Math.pow(1-p,3);
+    el.textContent=Math.round(e*target).toLocaleString()+(suffix||'');
+    if(p<1)requestAnimationFrame(go);
+  };
+  requestAnimationFrame(go);
+}
+setTimeout(()=>{
+  countUp(document.getElementById('s1'),30,'+',1200);
+  countUp(document.getElementById('s2'),109,'',1400);
+  countUp(document.getElementById('s3'),109,'',1400);
+  countUp(document.getElementById('s4'),53960,'',1800);
+},300);
+</script>
+</body>
+</html>
